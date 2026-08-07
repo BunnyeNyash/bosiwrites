@@ -1,117 +1,175 @@
-# BosiWrites — Hugo site
+# BosiWrites
 
-Your Blogger design, rebuilt as a free, self-hosted static site. No hosting
-bill, ever — GitHub Pages serves it for free, and AdSense works with zero
-platform restrictions since you own the actual HTML.
+A modern, responsive blog built with **Hugo** and designed for deployment on **GitHub Pages**. The site is lightweight, fast, SEO-friendly, and easy to customize without relying on a CMS or paid hosting.
 
-## What's in here
+Whether you're using this project as-is or adapting it for your own blog, this guide explains how to set everything up.
 
-- `hugo.toml` — site config (title, social links, AdSense ID, menu)
-- `content/posts/` — your blog posts (Markdown)
-- `content/about.md`, `content/contact.md`, `content/privacy-policy.md` — static pages
-- `layouts/` — the actual page templates (header, footer, post grid, hero slider, etc.)
-- `static/css/style.css` — all site styling, including dark mode
-- `static/js/main.js` — nav toggle, dark mode, hero slider, search
-- `.github/workflows/hugo.yml` — auto-builds and deploys the site on every push
+---
 
-## 1. Install Hugo locally (to preview before publishing)
-
-This environment couldn't reach the internet to install Hugo for you, so
-you'll need to do this step yourself, once:
-
-- **Mac**: `brew install hugo`
-- **Windows**: `choco install hugo-extended` (or download from hugo.io)
-- **Linux**: `sudo snap install hugo` (or download the `.deb`/`.tar.gz` from
-  [Hugo's releases page](https://github.com/gohugoio/hugo/releases) —
-  grab the **extended** version)
-
-Then, from this folder:
+## Project Structure
 
 ```
+hugo.toml                 # Site configuration
+content/                  # Blog posts and pages
+layouts/                  # Templates and page layouts
+static/css/               # Stylesheets
+static/js/                # JavaScript
+static/images/            # Images
+.github/workflows/        # GitHub Actions deployment workflow
+```
+
+Key folders:
+
+* **content/posts/** – Blog posts written in Markdown.
+* **content/about.md** – About page.
+* **content/contact.md** – Contact page.
+* **content/privacy-policy.md** – Privacy Policy page.
+* **layouts/** – Templates for posts, pages, homepage, navigation, footer, and other site components.
+* **static/css/style.css** – Main stylesheet with responsive design and dark mode.
+* **static/js/main.js** – Navigation, dark mode, hero slider, and search functionality.
+
+---
+
+# Running the Site Locally
+
+Install the **Hugo Extended** version.
+
+Examples:
+
+**macOS**
+
+```bash
+brew install hugo
+```
+
+**Windows**
+
+```bash
+choco install hugo-extended
+```
+
+**Linux**
+
+```bash
+sudo snap install hugo
+```
+
+Start the development server:
+
+```bash
 hugo server -D
 ```
 
-Open `http://localhost:1313` — that's your live-reloading local preview.
-`-D` includes draft posts (the archetype marks new posts as drafts by default).
-
-## 2. Put this on GitHub
-
-1. Create a new **public** repo on GitHub, e.g. `bosiwrites`.
-2. In this folder:
-   ```
-   git init
-   git add .
-   git commit -m "Initial site"
-   git branch -M main
-   git remote add origin https://github.com/YOUR-USERNAME/bosiwrites.git
-   git push -u origin main
-   ```
-3. In the repo's **Settings → Pages**, set "Source" to **GitHub Actions**.
-   That's it — the workflow in `.github/workflows/hugo.yml` will build and
-   deploy the site automatically on every push to `main`.
-4. Your site will be live at `https://YOUR-USERNAME.github.io/bosiwrites/`.
-
-**Important:** update `baseURL` in `hugo.toml` to match your actual GitHub
-Pages URL before your first deploy, or internal links will be wrong.
-
-## 3. Set up AdSense
-
-1. Apply for AdSense at [adsense.google.com](https://adsense.google.com)
-   with your live site URL. You'll want a handful of real posts and a
-   filled-out Privacy Policy page (already scaffolded at
-   `content/privacy-policy.md` — replace the bracketed placeholders) before
-   applying.
-2. Once approved, Google gives you a publisher ID like `ca-pub-1234567890123456`.
-   Paste it into `hugo.toml`:
-   ```toml
-   adsenseClientId = "ca-pub-1234567890123456"
-   ```
-3. Google also gives you a line for `ads.txt` — paste it into
-   `static/ads.txt`, replacing the placeholder comment.
-4. Ad slots are already placed above and below each post's body
-   (`layouts/_default/single.html`) — they'll only render once
-   `adsenseClientId` is filled in.
-
-## 4. Writing posts
+Visit:
 
 ```
+http://localhost:1313
+```
+
+The `-D` flag includes draft posts while developing.
+
+---
+
+# Deploying to GitHub Pages
+
+1. Create a new GitHub repository.
+2. Push this project to the repository.
+
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+git push -u origin main
+```
+
+3. In **Repository Settings → Pages**, select **GitHub Actions** as the deployment source.
+
+The included GitHub Actions workflow will automatically build and deploy the site whenever changes are pushed to the `main` branch.
+
+Before deploying, update the `baseURL` value inside `hugo.toml` to match your GitHub Pages URL.
+
+---
+
+# Adding New Posts
+
+Create a new post:
+
+```bash
 hugo new posts/my-new-post.md
 ```
 
-This uses the archetype in `archetypes/posts.md` to pre-fill the front
-matter. Key fields:
+Example front matter:
 
 ```yaml
 title: "Post Title"
 date: 2026-08-07
-categories: ["Technology"]   # powers Browse Categories + the category nav
-image: "/images/cover.jpg"   # optional — put the file in static/images/
-summary: "Short excerpt used in cards and the hero slider."
-popular: true                # optional — flags it for the Most Popular row
-draft: true                  # remove this line (or set to false) to publish
+categories: ["Technology"]
+image: "/images/cover.jpg"
+summary: "Short description of the article."
+popular: true
+draft: true
 ```
 
-## 5. About "Most Popular"
+To publish a post, either remove the `draft` field or set it to:
 
-Blogger's Popular Posts widget tracked real pageviews server-side — a static
-site has no server, so there's no automatic way to know what's actually
-popular. Right now, `layouts/partials/most-popular.html` shows whichever
-posts you manually flag with `popular: true`, and falls back to your most
-recent posts if nothing's flagged. If you later want *real* traffic-based
-popularity, that requires pulling data from Google Analytics' API at build
-time — a bigger project, and not something this scaffold sets up.
+```yaml
+draft: false
+```
 
-## 6. Search
+---
 
-Search is entirely client-side: Hugo generates a `search-index.json` file of
-every post's title + URL at build time, and `static/js/main.js` fetches and
-filters it as you type. No backend, no cost, works within GitHub Pages'
-static hosting.
+# AdSense Configuration
 
-## Social links & other placeholders to fill in
+If you plan to monetize the site with Google AdSense:
 
-- `hugo.toml` → `[params.social]` — replace the `#` placeholders with your
-  real LinkedIn, GitHub, Facebook, Instagram, and YouTube URLs.
-- `content/contact.md` — replace with your real contact info / form.
-- `content/about.md` — replace with your real bio.
-- `content/privacy-policy.md` — fill in the bracketed sections.
+1. Apply for approval using your live website.
+2. Add your publisher ID to `hugo.toml`:
+
+```toml
+adsenseClientId = "ca-pub-xxxxxxxxxxxxxxxx"
+```
+
+3. Replace the placeholder content in `static/ads.txt` with your own AdSense information.
+
+---
+
+# Search
+
+Search is fully client-side.
+
+During the build process, Hugo generates a search index containing post titles and URLs. JavaScript loads this index and filters results in real time, so no backend or database is required.
+
+---
+
+# Most Popular Posts
+
+Posts marked with:
+
+```yaml
+popular: true
+```
+
+appear in the **Most Popular** section.
+
+If no posts are marked as popular, the site automatically displays the most recent posts instead.
+
+---
+
+# Customization
+
+Before publishing your own version of the site, remember to update:
+
+* Site title and configuration in `hugo.toml`
+* Social media links
+* About page
+* Contact page
+* Privacy Policy
+* Images and branding
+
+---
+
+# License
+
+You're free to modify this project for your own personal or commercial website. If you redistribute modified versions, please keep this README updated to reflect your own changes.
