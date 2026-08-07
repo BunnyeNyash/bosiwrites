@@ -1,0 +1,26 @@
+{{ define "main" }}
+{{ $paginator := .Paginate .Site.RegularPages }}
+
+{{ if eq $paginator.PageNumber 1 }}
+{{ partial "hero-slider.html" . }}
+{{ partial "categories.html" . }}
+{{ end }}
+
+<div class='category-section container'>
+  <div class='posts-grid'>
+    {{ range $paginator.Pages }}
+    {{ partial "post-card.html" . }}
+    {{ end }}
+  </div>
+  {{ if $paginator.HasNext }}
+  <div class='load-more-wrap'>
+    <a class='load-more-btn' href='{{ $paginator.Next.URL }}'>Load more</a>
+  </div>
+  {{ end }}
+</div>
+
+{{ if eq $paginator.PageNumber 1 }}
+{{ partial "featured-latest.html" . }}
+{{ partial "most-popular.html" . }}
+{{ end }}
+{{ end }}

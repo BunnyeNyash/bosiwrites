@@ -1,0 +1,2 @@
+# Once you're approved for AdSense, Google will give you the exact line to put here.
+# It looks like: google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0

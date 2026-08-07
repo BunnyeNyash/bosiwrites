@@ -1,0 +1,18 @@
+{{ $icons := slice "fa-chart-line" "fa-bolt" "fa-feather" "fa-star" "fa-folder-open" "fa-bookmark" }}
+{{ if .Site.Taxonomies.categories }}
+<div class='category-section container'>
+  <div class='section-header'><h2>Browse Categories</h2></div>
+  <div class='category-grid'>
+    {{ range $i, $term := .Site.Taxonomies.categories.ByCount }}
+    {{ if lt $i 6 }}
+    <a class='category-card' href='{{ "/categories/" | relURL }}{{ $term.Name | urlize }}/'>
+      <span class='card-number'>{{ printf "%02d" (add $i 1) }}</span>
+      <div class='icon-circle'><i class='fas {{ index $icons (mod $i (len $icons)) }}'></i></div>
+      <h3>{{ $term.Name | humanize }}</h3>
+      <p>{{ $term.Count }} posts</p>
+    </a>
+    {{ end }}
+    {{ end }}
+  </div>
+</div>
+{{ end }}

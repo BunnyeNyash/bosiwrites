@@ -1,0 +1,33 @@
+{{ define "main" }}
+<article class='post-single container'>
+  <div class='breadcrumb'>
+    <a href='{{ "/" | relURL }}'>Home</a> / {{ .Title }}
+  </div>
+  {{ if .Params.image }}
+  <img class='post-cover' src='{{ .Params.image | relURL }}' alt='{{ .Title }}'>
+  {{ end }}
+  <h1>{{ .Title }}</h1>
+  <div class='post-single-meta'>
+    {{ range .Params.categories }}<span class='tag'>{{ . }}</span>{{ end }}
+    by {{ .Site.Params.author }} &middot; {{ .Date.Format "January 2, 2006" }}
+  </div>
+
+  {{ if .Site.Params.adsenseClientId }}
+  <div class='ad-slot'>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="{{ .Site.Params.adsenseClientId }}" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+  {{ end }}
+
+  <div class='post-body'>
+    {{ .Content }}
+  </div>
+
+  {{ if .Site.Params.adsenseClientId }}
+  <div class='ad-slot'>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="{{ .Site.Params.adsenseClientId }}" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+  {{ end }}
+</article>
+{{ end }}

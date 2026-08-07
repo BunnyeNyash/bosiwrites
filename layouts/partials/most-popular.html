@@ -1,0 +1,27 @@
+{{/*
+  Static sites have no built-in view-count tracking, so "popular" can't be
+  computed automatically the way Blogger's widget did it. Flag posts you
+  want featured here with `popular: true` in their front matter. Until you
+  do that, this falls back to showing your 4 most recent posts.
+*/}}
+{{ $flagged := where .Site.RegularPages "Params.popular" true }}
+{{ $popular := $flagged }}
+{{ if lt (len $flagged) 1 }}
+  {{ $popular = first 4 .Site.RegularPages }}
+{{ end }}
+{{ if $popular }}
+<div class='container'>
+  <div class='panel'>
+    <div class='panel-header'><i class='fas fa-fire'></i> Most Popular</div>
+    <div class='popular-row'>
+      {{ range first 4 $popular }}
+      <a class='vp-item' href='{{ .Permalink }}'>
+        <img src='{{ if .Params.image }}{{ .Params.image | relURL }}{{ else }}https://placehold.co/300x200/0066FF/FFFFFF?text=BosiWrites{{ end }}' alt='{{ .Title }}'/>
+        <h4>{{ .Title }}</h4>
+        <span class='date'>{{ .Date.Format "Jan 2, 2006" }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

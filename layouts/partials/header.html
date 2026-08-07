@@ -1,0 +1,47 @@
+<div id='header-wrap'>
+  <div class='container'>
+    <div class='header-logo'>
+      <span class='logo-icon'>B</span>
+      <a class='logo-text' href='{{ "/" | relURL }}'>Bosi<span>Writes</span></a>
+    </div>
+    <nav id='main-menu'>
+      <ul>
+        <li><a href='{{ "/" | relURL }}'>Home</a></li>
+        {{ if .Site.Taxonomies.categories }}
+        <li>
+          <a href='#'>Categories <i class='fas fa-chevron-down' style='font-size:10px;margin-left:5px;'></i></a>
+          <ul>
+            {{ range $name, $items := .Site.Taxonomies.categories }}
+            <li><a href='{{ "/categories/" | relURL }}{{ $name | urlize }}/'>{{ $name | humanize }}</a></li>
+            {{ end }}
+          </ul>
+        </li>
+        {{ end }}
+        {{ range .Site.Menus.main }}
+        {{ if ne .Name "Home" }}
+        <li><a href='{{ .URL | relURL }}'>{{ .Name }}</a></li>
+        {{ end }}
+        {{ end }}
+      </ul>
+    </nav>
+    <div class='header-icons'>
+      <div class='header-social'>
+        {{ with .Site.Params.social.linkedin }}<a href='{{ . }}' target='_blank' title='LinkedIn'><i class='fab fa-linkedin-in'></i></a>{{ end }}
+        {{ with .Site.Params.social.github }}<a href='{{ . }}' target='_blank' title='GitHub'><i class='fab fa-github'></i></a>{{ end }}
+        {{ with .Site.Params.social.facebook }}<a href='{{ . }}' target='_blank' title='Facebook'><i class='fab fa-facebook-f'></i></a>{{ end }}
+        {{ with .Site.Params.social.instagram }}<a href='{{ . }}' target='_blank' title='Instagram'><i class='fab fa-instagram'></i></a>{{ end }}
+        {{ with .Site.Params.social.youtube }}<a href='{{ . }}' target='_blank' title='YouTube'><i class='fab fa-youtube'></i></a>{{ end }}
+      </div>
+      <button class='icon-btn' id='search-toggle'><i class='fas fa-search'></i></button>
+      <button class='icon-btn' id='theme-toggle'><i class='fas fa-moon'></i></button>
+      <div class='hamburger' id='hamburger'><span></span><span></span><span></span></div>
+    </div>
+  </div>
+  <div id='nav-search'>
+    <form class='search-form' onsubmit="return false;">
+      <input autocomplete='off' class='search-input' placeholder='Search this blog' type='search'/>
+      <button class='search-btn' type='submit'><i class='fas fa-search'></i></button>
+      <div id='search-results'></div>
+    </form>
+  </div>
+</div>

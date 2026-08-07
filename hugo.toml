@@ -1,0 +1,53 @@
+baseURL = "https://bosiwrites.github.io/"
+languageCode = "en-us"
+title = "BosiWrites"
+theme = ""
+paginate = 12
+enableRobotsTXT = true
+
+[taxonomies]
+  category = "categories"
+
+[params]
+  description = "Exploring technology, innovation, and the future."
+  author = "Bosi"
+  logoText = "BosiWrites"
+  # Fill this in with your AdSense publisher ID (looks like "ca-pub-1234567890123456").
+  # Leave empty to keep AdSense scripts out of the site entirely.
+  adsenseClientId = ""
+  # Optional: your newsletter form's action URL (Mailchimp, Formspree, Buttondown, etc).
+  newsletterFormAction = ""
+  [params.social]
+    linkedin = "#"
+    github = "#"
+    facebook = "#"
+    instagram = "#"
+    youtube = "#"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 3
+  [[menu.main]]
+    name = "Newsletter"
+    url = "/#newsletter"
+    weight = 4
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS", "SearchIndex"]
+
+[outputFormats]
+  [outputFormats.SearchIndex]
+    mediaType = "application/json"
+    baseName = "search-index"
+    isPlainText = true
+    notAlternative = true

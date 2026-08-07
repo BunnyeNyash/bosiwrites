@@ -1,0 +1,44 @@
+<div class='newsletter-band' id='newsletter'>
+  <h2>Newsletter sign up</h2>
+  <p>Get the latest posts delivered straight to your inbox.</p>
+  <form class='newsletter-form-centered' {{ with .Site.Params.newsletterFormAction }}action='{{ . }}' method='post' target='_blank'{{ end }}>
+    <input placeholder='name@email.com' type='email' name='email' required/>
+    <button type='submit'>Subscribe</button>
+  </form>
+</div>
+
+<div id='footer-wrapper'>
+  <div class='container'>
+    <div class='footer-grid'>
+      <div class='footer-about'>
+        <div class='logo'>Bosi<span>Writes</span></div>
+        <p>{{ .Site.Params.description }}</p>
+        <div class='footer-social'>
+          {{ with .Site.Params.social.linkedin }}<a href='{{ . }}' target='_blank'><i class='fab fa-linkedin-in'></i></a>{{ end }}
+          {{ with .Site.Params.social.github }}<a href='{{ . }}' target='_blank'><i class='fab fa-github'></i></a>{{ end }}
+          {{ with .Site.Params.social.facebook }}<a href='{{ . }}' target='_blank'><i class='fab fa-facebook-f'></i></a>{{ end }}
+          {{ with .Site.Params.social.instagram }}<a href='{{ . }}' target='_blank'><i class='fab fa-instagram'></i></a>{{ end }}
+          {{ with .Site.Params.social.youtube }}<a href='{{ . }}' target='_blank'><i class='fab fa-youtube'></i></a>{{ end }}
+        </div>
+      </div>
+      <div class='footer-links'>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href='{{ "/" | relURL }}'>Home</a></li>
+          <li><a href='{{ "/about/" | relURL }}'>About</a></li>
+          <li><a href='{{ "/contact/" | relURL }}'>Contact</a></li>
+        </ul>
+      </div>
+      <div class='footer-links'>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href='{{ "/privacy-policy/" | relURL }}'>Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class='footer-bottom'>
+      <span>&copy; {{ now.Format "2006" }} BosiWrites. All rights reserved.</span>
+      <span>Made with <i class='fas fa-heart' style='color:#FF6B6B;'></i></span>
+    </div>
+  </div>
+</div>
