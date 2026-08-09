@@ -1,7 +1,7 @@
 baseURL = "https://bosiwrites.github.io/"
 languageCode = "en-us"
 title = "BosiWrites"
-theme = ""
+# theme = ""
 paginate = 12
 enableRobotsTXT = true
 
