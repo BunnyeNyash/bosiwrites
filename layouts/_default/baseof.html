@@ -30,6 +30,9 @@
 {{ if .Site.Params.adsenseClientId }}
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ .Site.Params.adsenseClientId }}" crossorigin="anonymous"></script>
 {{ end }}
+{{ if .Site.Params.goatcounterCode }}
+<script data-goatcounter="https://{{ .Site.Params.goatcounterCode }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+{{ end }}
 </head>
 <body>
 {{ partial "header.html" . }}
