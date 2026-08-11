@@ -42,8 +42,13 @@ jobs:
         env:
           GOATCOUNTER_CODE: ${{ vars.GOATCOUNTER_CODE }}
         run: |
-          chmod +x scripts/fetch-popular.sh
-          bash scripts/fetch-popular.sh
+          if [ -f scripts/fetch-popular.sh ]; then
+            chmod +x scripts/fetch-popular.sh
+            bash scripts/fetch-popular.sh
+          else
+            mkdir -p data
+            echo "[]" > data/popular.json
+          fi
       - name: Build with Hugo
         run: |
           hugo \
