@@ -22,7 +22,7 @@ enableRobotsTXT = true
   # My GoatCounter site code, from goatcounter.com →
   # Powers real, automatic "Most Popular" ranking.
   # Leave empty to keep it off (the Most Popular section will fall back to manually-flagged/recent posts).
-  goatcounterCode = ""
+  goatcounterCode = "bosiwrites"
   [params.social]
     linkedin = "https://www.linkedin.com/in/bosibori-otachi-6a1a46218/"
     github = "https://github.com/BunnyeNyash"
