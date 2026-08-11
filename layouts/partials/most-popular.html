@@ -15,11 +15,12 @@
 {{ end }}
 
 {{ if lt (len $posts) 1 }}
-  {{ $flagged := where .Site.RegularPages "Params.popular" true }}
+  {{ $allPosts := where .Site.RegularPages "Section" "posts" }}
+  {{ $flagged := where $allPosts "Params.popular" true }}
   {{ if $flagged }}
     {{ $posts = $flagged }}
   {{ else }}
-    {{ $posts = first 6 .Site.RegularPages }}
+    {{ $posts = first 6 $allPosts }}
   {{ end }}
 {{ end }}
 
