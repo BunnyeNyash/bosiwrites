@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{ $paginator := .Paginate .Site.RegularPages }}
+{{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") }}
 
 {{ if eq $paginator.PageNumber 1 }}
 {{ partial "hero-slider.html" . }}
