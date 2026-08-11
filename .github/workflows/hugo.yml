@@ -3,6 +3,8 @@ name: Deploy Hugo site to GitHub Pages
 on:
   push:
     branches: ["main"]
+  schedule:
+    - cron: "0 6 * * *"  # rebuild once a day so Most Popular stays fresh
   workflow_dispatch:
 
 permissions:
@@ -36,6 +38,10 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+      - name: Fetch popularity data
+        env:
+          GOATCOUNTER_CODE: ${{ vars.GOATCOUNTER_CODE }}
+        run: bash scripts/fetch-popular.sh
       - name: Build with Hugo
         run: |
           hugo \
