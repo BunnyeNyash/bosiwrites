@@ -16,6 +16,13 @@ enableRobotsTXT = true
   adsenseClientId = ""
   # To fill my newsletter form's action URL (Mailchimp, Formspree, Buttondown, etc).
   newsletterFormAction = ""
+  # My Disqus shortname, from disqus.com, → powers per-post comments.
+  # Leave empty to keep comments off.
+  disqusShortname = ""
+  # My GoatCounter site code, from goatcounter.com →
+  # Powers real, automatic "Most Popular" ranking.
+  # Leave empty to keep it off (the Most Popular section will fall back to manually-flagged/recent posts).
+  goatcounterCode = ""
   [params.social]
     linkedin = "https://www.linkedin.com/in/bosibori-otachi-6a1a46218/"
     github = "https://github.com/BunnyeNyash"
