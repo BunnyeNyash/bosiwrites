@@ -1,4 +1,4 @@
-{{ $posts := first 3 .Site.RegularPages }}
+{{ $posts := first 3 (where .Site.RegularPages "Section" "posts") }}
 {{ if $posts }}
 <div class='fp-grid container'>
   <div class='panel'>
