@@ -1,7 +1,6 @@
 baseURL = "https://bosiwrites.github.io/"
 languageCode = "en-us"
-title = "BosiWrites"
-# theme = ""
+title = "BosiWrites — Technology | Software | Fintech | Quantum Computing | Life"
 paginate = 12
 enableRobotsTXT = true
 
@@ -9,17 +8,17 @@ enableRobotsTXT = true
   category = "categories"
 
 [params]
-  description = "Exploring technology, innovation, and the future."
+  description = "Hey there! I go by the name Bosi, and this blog is where I'm documenting my journey into technology. From software and fintech to quantum computing and everything in between. I'm sharing everything I pick up along the way: insights, challenges, cool tools, and a few \"aha!\" moments too. If you're curious about tech or just want to follow along as I learn and grow, feel free to check it out. You might learn something new with me!😉"
   author = "Bosi"
   logoText = "BosiWrites"
-  # Fill this in with your AdSense publisher ID (looks like "ca-pub-1234567890123456").
+  # To fill with my AdSense publisher ID (looks like "ca-pub-1234567890123456").
   # Leave empty to keep AdSense scripts out of the site entirely.
   adsenseClientId = ""
-  # Optional: your newsletter form's action URL (Mailchimp, Formspree, Buttondown, etc).
+  # To fill my newsletter form's action URL (Mailchimp, Formspree, Buttondown, etc).
   newsletterFormAction = ""
   [params.social]
-    linkedin = "#"
-    github = "#"
+    linkedin = "https://www.linkedin.com/in/bosibori-otachi-6a1a46218/"
+    github = "https://github.com/BunnyeNyash"
     facebook = "#"
     instagram = "#"
     youtube = "#"
