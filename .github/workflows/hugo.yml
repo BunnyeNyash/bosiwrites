@@ -41,7 +41,9 @@ jobs:
       - name: Fetch popularity data
         env:
           GOATCOUNTER_CODE: ${{ vars.GOATCOUNTER_CODE }}
-        run: bash scripts/fetch-popular.sh
+        run: |
+          chmod +x scripts/fetch-popular.sh
+          bash scripts/fetch-popular.sh
       - name: Build with Hugo
         run: |
           hugo \
