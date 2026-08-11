@@ -205,6 +205,7 @@ img { max-width: 100%; height: auto; }
   #main-menu ul li a { display: block; padding: 12px 0; border-bottom: 1px solid var(--border-color); }
   .hamburger { display: flex; }
   .header-social { display: none; }
+  .popular-row { grid-template-columns: repeat(2, 1fr); }
   .slider-container { height: 350px; }
   .slide-item .slide-content { bottom: 30px; left: 20px; right: 20px; }
   .slide-item .slide-title { font-size: 24px; }
