@@ -15,7 +15,7 @@ enableRobotsTXT = true
   # Leave empty to keep AdSense scripts out of the site entirely.
   adsenseClientId = ""
   # To fill my newsletter form's action URL (Mailchimp, Formspree, Buttondown, etc).
-  newsletterFormAction = ""
+  newsletterFormAction = "https://formspree.io/f/mdenzony"
   # My EchoThread site shortname + API key,bfrom echothread.io), that 
   # powers per-post comments. Both are required; leave blank to keep
   # comments off.
