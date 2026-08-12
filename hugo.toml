@@ -27,6 +27,8 @@ enableRobotsTXT = true
   goatcounterCode = "bosiwrites"
   [params.social]
     linkedin = "https://www.linkedin.com/in/bosibori-otachi-6a1a46218/"
+    whatsapp = "https://wa.me/254112390108"
+    phone = "tel:+254112390108"
     github = "https://github.com/BunnyeNyash"
     facebook = "#"
     instagram = "#"
