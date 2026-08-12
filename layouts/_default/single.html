@@ -30,21 +30,16 @@
   </div>
   {{ end }}
 
-  {{ if .Site.Params.disqusShortname }}
-  <div id="disqus_thread"></div>
-  <script>
-    var disqus_config = function () {
-      this.page.url = "{{ .Permalink }}";
-      this.page.identifier = "{{ .File.UniqueID }}";
-    };
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://{{ .Site.Params.disqusShortname }}.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  {{ if and .Site.Params.echothreadShortname .Site.Params.echothreadApiKey }}
+  <div
+    id="echothread"
+    data-shortname="{{ .Site.Params.echothreadShortname }}"
+    data-api-key="{{ .Site.Params.echothreadApiKey }}"
+    data-identifier="{{ .File.ContentBaseName }}"
+    data-page-url="{{ .Permalink }}"
+    data-theme-source="--body-bg"
+  ></div>
+  <script src="https://cdn.echothread.io/widget.js" async></script>
   {{ end }}
 </article>
 {{ end }}
