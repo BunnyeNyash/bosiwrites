@@ -1,0 +1,12 @@
+{{ if .Site.Params.adsenseClientId }}
+<div class='ad-row container'>
+  <div class='ad-slot'>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="{{ .Site.Params.adsenseClientId }}" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+  <div class='ad-slot'>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="{{ .Site.Params.adsenseClientId }}" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+{{ end }}
