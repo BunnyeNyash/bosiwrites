@@ -183,6 +183,12 @@ img { max-width: 100%; height: auto; }
 .simple-page { padding: 50px 0 70px; max-width: 800px; margin: 0 auto; }
 .simple-page h1 { font-size: 34px; font-weight: 800; margin-bottom: 20px; }
 .simple-page .post-body { font-size: 16px; line-height: 1.8; }
+.contact-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0; }
+.contact-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 50px; font-weight: 600; font-size: 14px; color: white; }
+.contact-btn:hover { opacity: .9; color: white; transform: translateY(-2px); }
+.contact-btn.whatsapp { background: #25D366; }
+.contact-btn.phone { background: var(--main-color); }
+.contact-btn.email { background: var(--main-dark); }
 
 /* Pagination (archive / category pages) */
 .pagination { display: flex; justify-content: center; gap: 10px; padding: 30px 0 50px; }
