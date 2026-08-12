@@ -29,14 +29,7 @@ If you work in **finance** or **FinTech**, and this series has a particular eye 
 
 We are not at the finish line yet. The already existing quantum computers are not yet ready to replace today's systems. They are real but imperfect: **noisy**, **error-prone**, and **limited in scale**. The era of large-scale, fault-tolerant quantum computing is still ahead of us. But the foundational work, the algorithms, the protocols, the applications, is being built right now. And the people who understand the foundations now will be the ones building that future rather than scrambling to catch up with it.
 
-That is what this series is for. Not to make quantum computing seem mysterious or out of reach, but to make it understandable. We'll take it one concept at a time, building the intuition and the foundations needed to make sense of a field that is often made to seem far more intimidating than it really is. By the end of it, you will understand:
-- how qubits work mathematically,
-- how quantum gates manipulate them,
-- how quantum algorithms are structured,
-- how quantum cryptography protects information, and
-- how all of this applies to financial systems specifically.
-
-We are going to build that understanding layer by layer. There will be moments that feel unfamiliar and ideas that seem counterintuitive at first, but that's part of the journey. Quantum computing isn't difficult because it's impossible to understand. It's difficult because it asks us to think differently.
+That is what this series is for. Not to make quantum computing seem mysterious or out of reach, but to make it understandable. We'll take it one concept at a time, building the intuition and the foundations needed to make sense of a field that is often made to seem far more intimidating than it really is. By the end of it, you will understand how qubits work mathematically, how quantum gates manipulate them, how quantum algorithms are structured, how quantum cryptography protects information, and how all of this applies to financial systems specifically. We are going to build that understanding layer by layer. There will be moments that feel unfamiliar and ideas that seem counterintuitive at first, but that's part of the journey. Quantum computing isn't difficult because it's impossible to understand. It's difficult because it asks us to think differently.
 
 Can’t wait to see you in the next one. Byeeeeee🚀
 
