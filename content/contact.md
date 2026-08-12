@@ -10,6 +10,13 @@ Want to get in touch? Reach me directly:
   <a href="mailto:obwhimsicalwhispers@gmail.com" class="contact-btn email"><i class="fas fa-envelope"></i> Email Me</a>
 </div>
 
-Or reach out through any of the social links in the footer.
+Or send a message directly:
 
-(This is a static site, so a working contact *form* needs a form backend like [Formspree](https://formspree.io) or [Getform](https://getform.io) — both have free tiers. Once you sign up, replace this text with your form's embed code.)
+<form action="https://formspree.io/f/maewjwgz" method="POST" class="contact-form">
+  <input type="text" name="name" placeholder="Your name" required>
+  <input type="email" name="email" placeholder="Your email" required>
+  <textarea name="message" placeholder="Your message" rows="10" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
+
+Or reach out through any of the social links in the navigation bar, or in the footer.
