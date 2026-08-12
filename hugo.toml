@@ -16,9 +16,11 @@ enableRobotsTXT = true
   adsenseClientId = ""
   # To fill my newsletter form's action URL (Mailchimp, Formspree, Buttondown, etc).
   newsletterFormAction = ""
-  # My Disqus shortname, from disqus.com, → powers per-post comments.
-  # Leave empty to keep comments off.
-  disqusShortname = ""
+  # My EchoThread site shortname + API key,bfrom echothread.io), that 
+  # powers per-post comments. Both are required; leave blank to keep
+  # comments off.
+  echothreadShortname = "bosiwrites"
+  echothreadApiKey = "3fMoCiNOAqEVc2rQUyd439-mu0vj1MfGrJ098tVcI6M"
   # My GoatCounter site code, from goatcounter.com →
   # Powers real, automatic "Most Popular" ranking.
   # Leave empty to keep it off (the Most Popular section will fall back to manually-flagged/recent posts).
