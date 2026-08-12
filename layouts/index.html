@@ -4,6 +4,7 @@
 {{ if eq $paginator.PageNumber 1 }}
 {{ partial "hero-slider.html" . }}
 {{ partial "categories.html" . }}
+{{ partial "ad-row.html" . }}
 {{ end }}
 
 <div class='category-section container'>
@@ -20,6 +21,7 @@
 </div>
 
 {{ if eq $paginator.PageNumber 1 }}
+{{ partial "ad-row.html" . }}
 {{ partial "featured-latest.html" . }}
 {{ partial "most-popular.html" . }}
 {{ end }}
