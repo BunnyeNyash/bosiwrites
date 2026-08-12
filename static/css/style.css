@@ -191,6 +191,12 @@ img { max-width: 100%; height: auto; }
 .contact-buttons a.contact-btn.whatsapp { background: #25D366; }
 .contact-buttons a.contact-btn.phone { background: var(--main-color); }
 .contact-buttons a.contact-btn.email { background: var(--main-dark); }
+.contact-form { display: flex; flex-direction: column; gap: 14px; max-width: 500px; margin: 30px 0; }
+.contact-form input, .contact-form textarea { padding: 14px 16px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--input-bg); color: var(--text-color); font-family: 'Quicksand', sans-serif; font-size: 14px; outline: none; }
+.contact-form input:focus, .contact-form textarea:focus { border-color: var(--main-color); }
+.contact-form textarea { resize: vertical; }
+.contact-form button { padding: 14px 24px; background: var(--main-color); color: white; border: none; border-radius: 8px; font-weight: 600; font-family: 'Quicksand', sans-serif; font-size: 14px; cursor: pointer; align-self: flex-start; }
+.contact-form button:hover { background: var(--main-dark); }
 
 /* Pagination (archive / category pages) */
 .pagination { display: flex; justify-content: center; gap: 10px; padding: 30px 0 50px; }
