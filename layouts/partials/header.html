@@ -2,11 +2,11 @@
   <div class='container'>
     <div class='header-logo'>
       <span class='logo-icon'>B</span>
-      <a class='logo-text' href='{{ "/" | relURL }}'>Bosi<span>Writes</span></a>
+      <a class='logo-text' href='{{ .Site.Home.RelPermalink }}'>Bosi<span>Writes</span></a>
     </div>
     <nav id='main-menu'>
       <ul>
-        <li><a href='{{ "/" | relURL }}'>Home</a></li>
+        <li><a href='{{ .Site.Home.RelPermalink }}'>Home</a></li>
         {{ if .Site.Taxonomies.categories }}
         <li>
           <a href='#'>Categories <i class='fas fa-chevron-down' style='font-size:10px;margin-left:5px;'></i></a>
