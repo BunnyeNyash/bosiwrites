@@ -4,7 +4,7 @@
     <a href='{{ .Site.Home.RelPermalink }}'>Home</a> / {{ .Title }}
   </div>
   {{ if .Params.image }}
-  <img class='post-cover' src='{{ .Params.image | relURL }}' alt='{{ .Title }}'>
+  <img class='post-cover' src='{{ printf "%s%s" (.Site.BaseURL | strings.TrimSuffix "/") .Params.image }}' alt='{{ .Title }}'>
   {{ end }}
   <h1>{{ .Title }}</h1>
   <div class='post-single-meta'>
