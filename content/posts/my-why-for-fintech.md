@@ -3,7 +3,7 @@ title: "My 'Why' for Fintech"
 date: 2026-08-10
 categories: ["Fintech"]
 popular: true
-image: ""
+image: "/images/my-why-for-fintech.png"
 summary: "Fintech sits at the intersection of two things I’ve come to love: finance and technology, and today I want to share my why for this love. It’s been a winding path that’s brought me here, but one I’m truly grateful for."
 ---
 
