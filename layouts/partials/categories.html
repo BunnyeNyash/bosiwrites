@@ -5,12 +5,15 @@
   <div class='category-grid'>
     {{ range $i, $term := .Site.Taxonomies.categories.ByCount }}
     {{ if lt $i 6 }}
-    <a class='category-card' href='{{ "/categories/" | relURL }}{{ $term.Name | urlize }}/'>
+    {{ $termPage := $.Site.GetPage (printf "/categories/%s" ($term.Name | urlize)) }}
+    {{ if $termPage }}
+    <a class='category-card' href='{{ $termPage.RelPermalink }}'>
       <span class='card-number'>{{ printf "%02d" (add $i 1) }}</span>
       <div class='icon-circle'><i class='fas {{ index $icons (mod $i (len $icons)) }}'></i></div>
       <h3>{{ $term.Name | humanize }}</h3>
       <p>{{ $term.Count }} posts</p>
     </a>
+    {{ end }}
     {{ end }}
     {{ end }}
   </div>
