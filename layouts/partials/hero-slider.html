@@ -4,7 +4,7 @@
   <div class='slider-container'>
     <div class='slider-track'>
       {{ range $posts }}
-      <div class='slide-item' style="background-image:url('{{ if .Params.image }}{{ .Params.image | relURL }}{{ else }}https://placehold.co/1200x500/0066FF/FFFFFF?text=BosiWrites{{ end }}')">
+      <div class='slide-item' style="background-image:url('{{ if .Params.image }}{{ printf "%s%s" (.Site.BaseURL | strings.TrimSuffix "/") .Params.image }}{{ else }}https://placehold.co/1200x500/0066FF/FFFFFF?text=BosiWrites{{ end }}')">
         <div class='slide-overlay'></div>
         <div class='slide-content'>
           {{ with .Params.categories }}<span class='slide-tag'>{{ index . 0 }}</span>{{ end }}
