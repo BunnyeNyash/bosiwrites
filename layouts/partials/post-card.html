@@ -1,5 +1,5 @@
 <div class='post-card'>
-  <a class='post-image' href='{{ .Permalink }}' style="background-image:url('{{ if .Params.image }}{{ .Params.image | relURL }}{{ else }}https://placehold.co/400x300/0066FF/FFFFFF?text=BosiWrites{{ end }}')">
+  <a class='post-image' href='{{ .Permalink }}' style="background-image:url('{{ if .Params.image }}{{ printf "%s%s" (.Site.BaseURL | strings.TrimSuffix "/") .Params.image }}{{ else }}https://placehold.co/400x300/0066FF/FFFFFF?text=BosiWrites{{ end }}')">
     {{ with .Params.categories }}<span class='post-tag'>{{ index . 0 }}</span>{{ end }}
   </a>
   <div class='post-body'>
