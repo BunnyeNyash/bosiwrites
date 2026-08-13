@@ -146,6 +146,9 @@ img { max-width: 100%; height: auto; }
 .newsletter-form-centered input[type=email] { flex: 1; padding: 16px 20px; border: none; font-size: 15px; font-family: 'Quicksand', sans-serif; outline: none; }
 .newsletter-form-centered button { padding: 16px 36px; background: #0F9B8E; color: white; border: none; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; cursor: pointer; font-family: 'Quicksand', sans-serif; font-size: 14px; }
 .newsletter-form-centered button:hover { background: var(--main-dark); }
+.newsletter-message { display: none; margin-top: 18px; font-weight: 600; font-size: 15px; }
+.newsletter-message.success { color: #FFFFFF; }
+.newsletter-message.error { color: #FFD1D1; }
 
 /* Footer */
 #footer-wrapper { background: var(--footer-bg); color: var(--footer-text); padding: 60px 0 20px; margin-top: 0; }
