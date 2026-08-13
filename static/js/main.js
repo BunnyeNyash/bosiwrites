@@ -72,4 +72,42 @@ $(document).ready(function () {
   $(document).on('click', function (e) {
     if (!$(e.target).closest('#nav-search').length) { $results.hide(); }
   });
+
+  // --- Newsletter form (inline AJAX submit, no page navigation) ---
+  var $newsletterForm = $('#newsletter-form');
+  var $newsletterMsg = $('#newsletter-message');
+  if ($newsletterForm.length) {
+    $newsletterForm.on('submit', function (e) {
+      e.preventDefault();
+      var form = this;
+      var $form = $(form);
+      var actionUrl = $form.attr('action');
+      if (!actionUrl) return;
+      var $button = $form.find('button[type="submit"]');
+      $button.prop('disabled', true).text('Subscribing...');
+      $newsletterMsg.removeClass('success error').hide();
+
+      fetch(actionUrl, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function (response) {
+        if (response.ok) {
+          $form.hide();
+          $newsletterMsg.text('Thanks for subscribing! 🎉').addClass('success').show();
+        } else {
+          response.json().then(function (data) {
+            var errorMsg = (data && data.errors && data.errors.length)
+              ? data.errors.map(function (err) { return err.message; }).join(', ')
+              : 'Something went wrong. Please try again.';
+            $newsletterMsg.text(errorMsg).addClass('error').show();
+            $button.prop('disabled', false).text('Subscribe');
+          });
+        }
+      }).catch(function () {
+        $newsletterMsg.text('Something went wrong. Please try again.').addClass('error').show();
+        $button.prop('disabled', false).text('Subscribe');
+      });
+    });
+  }
 });
