@@ -1,10 +1,11 @@
 <div class='newsletter-band' id='newsletter'>
   <h2>Newsletter sign up</h2>
   <p>Get the latest posts delivered straight to your inbox.</p>
-  <form class='newsletter-form-centered' {{ with .Site.Params.newsletterFormAction }}action='{{ . }}' method='post' target='_blank'{{ end }}>
+  <form class='newsletter-form-centered' id='newsletter-form' {{ with .Site.Params.newsletterFormAction }}action='{{ . }}' method='post'{{ end }}>
     <input placeholder='name@email.com' type='email' name='email' required/>
     <button type='submit'>Subscribe</button>
   </form>
+  <p id='newsletter-message' class='newsletter-message'></p>
 </div>
 
 <div id='footer-wrapper'>
