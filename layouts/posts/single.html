@@ -1,7 +1,7 @@
 {{ define "main" }}
 <article class='post-single container'>
   <div class='breadcrumb'>
-    <a href='{{ "/" | relURL }}'>Home</a> / {{ .Title }}
+    <a href='{{ .Site.Home.RelPermalink }}'>Home</a> / {{ .Title }}
   </div>
   {{ if .Params.image }}
   <img class='post-cover' src='{{ .Params.image | relURL }}' alt='{{ .Title }}'>
