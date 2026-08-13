@@ -1,5 +1,5 @@
 ---
-title: "Five Tools I Actually Use Every Day"
+title: "My 'Why' for Fintech"
 date: 2026-08-10
 categories: ["Fintech"]
 summary: "Fintech sits at the intersection of two things I’ve come to love: finance and technology, and today I want to share my why for this love. It’s been a winding path that’s brought me here, but one I’m truly grateful for."
