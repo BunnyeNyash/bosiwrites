@@ -26,14 +26,14 @@
         <h4>Quick Links</h4>
         <ul>
           <li><a href='{{ .Site.Home.RelPermalink }}'>Home</a></li>
-          <li><a href='{{ "/about/" | relURL }}'>About</a></li>
-          <li><a href='{{ "/contact/" | relURL }}'>Contact</a></li>
+          <li><a href='{{ with $.Site.GetPage "/about" }}{{ .RelPermalink }}{{ end }}'>About</a></li>
+          <li><a href='{{ with $.Site.GetPage "/contact" }}{{ .RelPermalink }}{{ end }}'>Contact</a></li>
         </ul>
       </div>
       <div class='footer-links'>
         <h4>Legal</h4>
         <ul>
-          <li><a href='{{ "/privacy-policy/" | relURL }}'>Privacy Policy</a></li>
+          <li><a href='{{ with $.Site.GetPage "/privacy-policy" }}{{ .RelPermalink }}{{ end }}'>Privacy Policy</a></li>
         </ul>
       </div>
     </div>
