@@ -6,7 +6,7 @@
     <div class='featured-mini-grid'>
       {{ range $posts }}
       <a class='featured-mini-item' href='{{ .Permalink }}'>
-        <img src='{{ if .Params.image }}{{ .Params.image | relURL }}{{ else }}https://placehold.co/300x200/0066FF/FFFFFF?text=BosiWrites{{ end }}' alt='{{ .Title }}'/>
+        <img src='{{ if .Params.image }}{{ printf "%s%s" (.Site.BaseURL | strings.TrimSuffix "/") .Params.image }}{{ else }}https://placehold.co/300x200/0066FF/FFFFFF?text=BosiWrites{{ end }}' alt='{{ .Title }}'/>
         <span class='title'>{{ .Title }}</span>
         <span class='date'>{{ .Date.Format "Jan 2, 2006" }}</span>
       </a>
@@ -18,7 +18,7 @@
     <div class='vertical-list'>
       {{ range $posts }}
       <a class='vl-item' href='{{ .Permalink }}'>
-        <img src='{{ if .Params.image }}{{ .Params.image | relURL }}{{ else }}https://placehold.co/120x120/0066FF/FFFFFF?text=B{{ end }}' alt='{{ .Title }}'/>
+        <img src='{{ if .Params.image }}{{ printf "%s%s" (.Site.BaseURL | strings.TrimSuffix "/") .Params.image }}{{ else }}https://placehold.co/120x120/0066FF/FFFFFF?text=B{{ end }}' alt='{{ .Title }}'/>
         <div class='vl-info'>
           <h4>{{ .Title }}</h4>
           <span class='date'>{{ .Date.Format "Jan 2, 2006" }}</span>
