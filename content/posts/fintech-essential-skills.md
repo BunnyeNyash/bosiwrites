@@ -2,7 +2,7 @@
 title: "Fintech's Essential Skills"
 date: 2026-08-14
 categories: ["Fintech"]
-image: "images/fintech-skills.png"
+image: "/images/fintech-skills.png"
 summary: "What does it actually take to build a career in Fintech? In this article, I break down the core finance, technical, data, web development, compliance, and soft skills I’ll be building throughout my learning journey."
 ---
 
