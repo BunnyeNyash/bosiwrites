@@ -52,6 +52,7 @@ I do not sell your personal information.
 ## Changes to This Privacy Policy
 This privacy policy may be updated from time to time as BosiWrites grows, new features are added, or the services used by the site change.
 <br>
+<br>
 Any updates will be posted on this page, along with a new "Last updated" date.
 <br>
 <br>
