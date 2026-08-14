@@ -41,7 +41,6 @@ We are going to build that understanding layer by layer, starting with the ideas
 Can’t wait to see you in the next one. Byeeeeee🚀
 
 <br>
-<br>
 ---
 <br>
 <br>
