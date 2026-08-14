@@ -3,7 +3,7 @@ title: "What Is Quantum Computing and Why Should You Care?"
 date: 2026-08-06
 categories: ["Quantum Computing"]
 popular: true
-image: "/images/what-is-quantum-computing.png"
+image: "/images/what-is-quantum-computing-and-why-you-should-care.jpg"
 summary: "Let me start with a confession. The first time I heard the words quantum computing, I did what most people do. I nodded slowly, assumed it was something only physicists in lab coats needed to worry about, and moved on with my life."
 ---
 
@@ -40,8 +40,9 @@ We are going to build that understanding layer by layer, starting with the ideas
 
 Can’t wait to see you in the next one. Byeeeeee🚀
 
----
 <br>
+<br>
+---
 <br>
 <br>
 #QuantumComputing #FinTech #LearningInPublic #QuantumFinance #TechJourney #BuildInPublic #QuantumPhysics #FutureOfFinance
