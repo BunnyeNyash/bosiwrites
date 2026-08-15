@@ -56,7 +56,7 @@ Next week, we are going to look at what this machine can actually do in the real
 
 See you there. 🚀
 
-<br><br>
+<br>
 ---
 <br><br>
 #QuantumComputing #FinTech #LearningInPublic #QuantumPhysics #TechJourney #BuildInPublic #Superposition #Entanglement
